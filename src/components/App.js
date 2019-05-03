@@ -45,7 +45,7 @@ class App extends React.Component {
             <NextTask addTodo={this.addTodo.bind(this)} />
             <TodoList
                 todos={this.state.data}
-                remov={this.handleRemove.bind(this)} />
+                remove={this.handleRemove.bind(this)} />
         </div>
         )
 
