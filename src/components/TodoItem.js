@@ -1,13 +1,11 @@
 import React from 'react'
 
-function TodoItem(prop) {
+const TodoItem = ({todo, remove}) => {
+    //Each Todo
     return (
-        <div>           
-            <input type='checkbox' />
-            <p> {prop.task} </p>
-            <hr></hr>
-        </div>
-    )
+        <a href='#' className='todoListItem' onClick={() => {remove(todo.id)}}>
+        {todo.text}</a>
+    );
 }
 
 export default TodoItem

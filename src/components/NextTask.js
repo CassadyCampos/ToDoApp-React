@@ -1,30 +1,18 @@
 import React from 'react'
 
-class NextTask extends  React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-    
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSUbmit = this.handleSubmit.bind(this);
-    }
+const NextTask = ({addTodo}) => {
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
+    //Input tracker 
+    let input;
 
-    handleSubmit(event) {
-        alert('Next task was submitted: ' + this.state.value);
-        event.preventDefault();
-    }
-
-    render() {
-        return (
-            <input type='text' value={this.state.value}
-            placeholder='Next Task. . .' nChange={this.handleChange} />
-
-        )
-    }
-}
+    return (
+        <div>
+            <input ref={node => {input = node;}} />
+            <button onClick={() => {addTodo(input.value); input.value ='';}}>
+            +
+            </button>
+        </div>
+    );
+};
 
 export default NextTask
